@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles1.css">
+     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+</head>
+<body>
+    <div class="main">
+        <div class="filterbox">
+            <ul>
+              <li><a class="buttons image-filter active"  data-filter="all">All</a></li>
+              <li><a class="buttons image-filter" data-filter="river">River</a></li>
+              <li><a class="buttons image-filter" data-filter="nuture">Nature</a></li>
+              <li><a class="buttons image-filter" data-filter="mountain">Mountain</a></li>
+            </ul>
+
+<div class="imagebox">
+
+    <a href="river.png" class="image river">
+        <img src="river.png" alt="">
+    </a>
+        
+    <a href="river1.png" class="image river">
+        <img src="river1.png" alt="">
+    </a>
+
+
+    <a href="river4.png" class="image river">
+        <img src="river4.png" alt="">
+    </a>
+
+
+
+
+    <a href="nuture.png" class="image nuture">
+        <img src="nuture.png" alt="">
+    </a>
+        
+
+
+    <a href="nuture2.png" class="image nuture">
+        <img src="nuture2.png" alt="">
+
+    </a>
+
+
+    <a href="nuture4.png" class="image nuture">
+        <img src="nuture4.png" alt="">
+        
+    </a>
+
+
+
+    <a href="mountain.png" class="image mountain">
+        <img src="mountain.png" alt="">
+        
+    </a>
+    <a href="mountain2.png" class="image mountain">
+        <img src="mountain2.png" alt="">
+        
+    </a>
+    <a href="mountain1.png" class="image mountain">
+        <img src="mountain1.png" alt="">
+        
+    </a>
+    <a href="mountain3.png" class="image Mountain">
+        <img src="mountain3.png" alt="">
+        
+    </a>
+
+
+</div>
+
+        
+        </div>
+    </div>
+
+    <script>
+
+        $(document).ready(function(){
+    
+            $('.buttons').click(function(){
+                $(this).addClass('active').siblings().removeClass('active');
+    
+                var filter = $(this).attr('data-filter');
+                if(filter == 'all'){
+                    $('.image').show(400);
+                }
+    
+                else{
+                    $('.image').not('.'+filter).hide(200);
+                    $('.image').filter('.'+filter).show(400);
+                }
+            });
+        });
+    </script>
+    
+
+   
+</body>
+</html>
